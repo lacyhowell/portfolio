@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Name: Lacy Howell
+        Assignment: Unit 1 Portfolio Index Page
+        File: index.html
+
+        Purpose:
+        This is the manually created homepage for my course portfolio website.
+        It introduces my outdoor adventure theme and will serve as the launch page
+        for additional pages created throughout the course.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outdoor Adventure Portfolio</title>
+
+    <style>
+        /* Main page style */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F7F7F2;
+            color: #333333;
+        }
+
+        /* Header section */
+        header {
+            background-color: #2E6F40;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Navigation links */
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            background-color: #8B5E3C;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #F28C28;
+        }
+
+        /* Main content area */
+        main {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Hero image */
+        .hero-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 4px solid #2E6F40;
+        }
+
+        /* White content cards */
+        section {
+            background-color: white;
+            padding: 22px;
+            margin-top: 25px;
+            border-left: 8px solid #4A90E2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        /* Page preview cards */
+        .page-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .page-card {
+            border-left: 6px solid #F28C28;
+            padding: 15px;
+            background-color: #F7F7F2;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333333;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* Makes the layout easier to read on phones */
+        @media screen and (max-width: 700px) {
+            .page-list {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                max-width: 220px;
+                margin: 8px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Outdoor Adventure Portfolio</h1>
+        <p>My course portfolio for web design projects and assignments.</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">Multimedia</a>
+            <a href="#">How-To</a>
+            <a href="#">Order Form</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Placeholder image for the homepage -->
+        <img class="hero-image" src="outdoor-adventure-placeholder.png" alt="Outdoor adventure placeholder image">
+
+        <section>
+            <h2>Welcome to My Portfolio</h2>
+            <p>
+                This website will showcase my assignments and projects throughout the course.
+                The theme of the site is outdoor adventure, including hiking, camping, and exploring nature.
+            </p>
+            <p>
+                As I learn more HTML and CSS, I will continue adding pages, styling, forms, images,
+                multimedia, and interactive features.
+            </p>
+        </section>
+
+        <section>
+            <h2>Planned Website Pages</h2>
+
+            <div class="page-list">
+                <div class="page-card">
+                    <h3>Contact Form Page</h3>
+                    <p>A page where visitors can send a message using a simple contact form.</p>
+                </div>
+
+                <div class="page-card">
+                    <h3>Multimedia Page</h3>
+                    <p>A page that will include outdoor photos, captions, and a video.</p>
+                </div>
+
+                <div class="page-card">
+                    <h3>How-To Page</h3>
+                    <p>A beginner-friendly guide for preparing for a hiking trip.</p>
+                </div>
+
+                <div class="page-card">
+                    <h3>Order Form Page</h3>
+                    <p>A practice form for ordering outdoor supplies or hiking gear.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Outdoor Adventure Portfolio</p>
+    </footer>
+</body>
+</html>
