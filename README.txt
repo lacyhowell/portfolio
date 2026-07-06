@@ -1,12 +1,16 @@
-# GitHub Pages Instructions
+Updated GitHub Upload Instructions
 
-1. Create a new public repository.
-2. Upload index.html, index-ai.html, and placeholder.png.
-3. Go to Settings -> Pages.
-4. Under 'Build and deployment', choose:
-   - Source: Deploy from a branch
-   - Branch: main / root
-5. Save.
+Upload these files to the same GitHub repository:
+- index.html
+- index-ai.html
+- style.css
+- outdoor-placeholder.png
 
-Your site will be available at:
-https://YOUR-USERNAME.github.io/REPOSITORY-NAME/
+When GitHub asks if you want to replace the existing files, choose to replace/overwrite them.
+
+After uploading:
+1. Click Commit changes.
+2. Wait about 1 minute.
+3. Visit: https://lacyhowell.github.io/portfolio/
+
+Your page should now show the polished outdoor portfolio design.
