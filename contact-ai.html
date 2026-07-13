@@ -1,20 +1,98 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Contact Me</title><link rel='stylesheet' href='style.css'></head><body>
-<h1>AI Generated Contact Form</h1><a href='index.html'>Home</a>
-<form>
-<fieldset><legend>Contact Information</legend>
-<label>Name:<input type='text' name='name'></label><br>
-<label>Email:<input type='email' name='email'></label><br>
-<label>Subject:<input type='text' name='subject'></label><br>
-<label>Message:<textarea name='message'></textarea></label><br>
-<label>Visit Date:<input type='date'></label><br>
-<label>Age:<input type='number'></label><br>
-<label>Favorite Activity:
-<select><option>Hiking</option><option>Camping</option><option>Fishing</option></select></label><br>
-<p>Experience:</p>
-<label><input type='radio' name='exp'>Beginner</label>
-<label><input type='radio' name='exp'>Experienced</label><br>
-<label><input type='checkbox'>Subscribe to updates</label><br>
-<label>Upload Photo:<input type='file'></label><br>
-<input type='submit' value='Submit'>
-<input type='reset' value='Reset'>
-</fieldset></form></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- AI-generated comparison page with accessibility and responsive settings. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-generated contact form created for comparison in the Unit 2 assignment.">
+    <title>AI-Generated Contact Form | Outdoor Adventure Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Shared navigation helps users move between the portfolio pages. -->
+    <header class="site-header">
+        <h1>AI-Generated Contact Form</h1>
+        <p class="tagline">This separate version was created with AI assistance for comparison.</p>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Manual Form</a>
+            <a href="contact-ai.html" aria-current="page">AI Form</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-introduction" aria-labelledby="ai-form-heading">
+            <h2 id="ai-form-heading">Accessible Portfolio Contact Form</h2>
+            <p>Complete the fields below. Required fields are marked with an asterisk (*).</p>
+        </section>
+
+        <!-- AI-generated form structure using semantic grouping and associated labels. -->
+        <form action="#" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Your Details</legend>
+
+                <label for="ai-name">Full Name *</label>
+                <input type="text" id="ai-name" name="name" autocomplete="name" required>
+
+                <label for="ai-email">Email Address *</label>
+                <input type="email" id="ai-email" name="email" autocomplete="email" required>
+
+                <label for="ai-subject">Subject *</label>
+                <input type="text" id="ai-subject" name="subject" required>
+
+                <label for="ai-message">Message *</label>
+                <textarea id="ai-message" name="message" rows="7" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+
+                <label for="ai-date">Preferred Response Date</label>
+                <input type="date" id="ai-date" name="response-date">
+
+                <label for="ai-number">Number of Outdoor Trips This Year</label>
+                <input type="number" id="ai-number" name="trip-count" min="0" max="100">
+
+                <label for="ai-topic">Primary Topic</label>
+                <select id="ai-topic" name="topic">
+                    <option value="">Choose a topic</option>
+                    <option value="portfolio">Portfolio feedback</option>
+                    <option value="hiking">Hiking</option>
+                    <option value="camping">Camping</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <fieldset class="nested-fieldset">
+                    <legend>Preferred Reply Method</legend>
+                    <label class="inline-option" for="reply-email">
+                        <input type="radio" id="reply-email" name="reply-method" value="email">
+                        Email
+                    </label>
+                    <label class="inline-option" for="reply-phone">
+                        <input type="radio" id="reply-phone" name="reply-method" value="phone">
+                        Phone
+                    </label>
+                </fieldset>
+
+                <label class="inline-option" for="ai-newsletter">
+                    <input type="checkbox" id="ai-newsletter" name="newsletter" value="yes">
+                    Receive occasional portfolio updates
+                </label>
+
+                <label for="ai-file">Attach a File</label>
+                <input type="file" id="ai-file" name="attachment">
+            </fieldset>
+
+            <div class="form-buttons">
+                <button type="submit">Send Message</button>
+                <button type="reset" class="secondary-button">Clear Form</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lacy Howell | Outdoor Adventure Portfolio</p>
+    </footer>
+</body>
+</html>

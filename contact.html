@@ -1,20 +1,118 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Contact Me</title><link rel='stylesheet' href='style.css'></head><body>
-<h1>Contact Me</h1><a href='index.html'>Home</a>
-<form>
-<fieldset><legend>Contact Information</legend>
-<label>Name:<input type='text' name='name'></label><br>
-<label>Email:<input type='email' name='email'></label><br>
-<label>Subject:<input type='text' name='subject'></label><br>
-<label>Message:<textarea name='message'></textarea></label><br>
-<label>Visit Date:<input type='date'></label><br>
-<label>Age:<input type='number'></label><br>
-<label>Favorite Activity:
-<select><option>Hiking</option><option>Camping</option><option>Fishing</option></select></label><br>
-<p>Experience:</p>
-<label><input type='radio' name='exp'>Beginner</label>
-<label><input type='radio' name='exp'>Experienced</label><br>
-<label><input type='checkbox'>Subscribe to updates</label><br>
-<label>Upload Photo:<input type='file'></label><br>
-<input type='submit' value='Submit'>
-<input type='reset' value='Reset'>
-</fieldset></form></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page information and responsive display settings. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact form for Lacy Howell's outdoor adventure portfolio.">
+    <title>Contact Me | Outdoor Adventure Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- The shared header keeps navigation consistent with the homepage. -->
+    <header class="site-header">
+        <h1>Contact Me</h1>
+        <p class="tagline">Use the form below to send a question, comment, or suggestion.</p>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="contact.html" aria-current="page">Contact Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-introduction" aria-labelledby="form-heading">
+            <h2 id="form-heading">Portfolio Contact Form</h2>
+            <p>
+                Required fields are marked with an asterisk (*). This class project demonstrates the layout and
+                accessibility of a contact form; it does not send information to a live database.
+            </p>
+        </section>
+
+        <!-- The form uses labels, fieldsets, and legends to organize related controls accessibly. -->
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- This fieldset collects the visitor's basic contact information. -->
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <label for="full-name">Full Name *</label>
+                <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="555-555-5555">
+
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="7" required></textarea>
+            </fieldset>
+
+            <!-- This fieldset demonstrates additional input types requested by the assignment. -->
+            <fieldset>
+                <legend>Additional Information</legend>
+
+                <label for="contact-date">Preferred Contact Date</label>
+                <input type="date" id="contact-date" name="contact-date">
+
+                <label for="group-size">Number of People in Your Outdoor Group</label>
+                <input type="number" id="group-size" name="group-size" min="1" max="20" value="1">
+
+                <label for="activity">Favorite Outdoor Activity</label>
+                <select id="activity" name="activity">
+                    <option value="">Select an activity</option>
+                    <option value="hiking">Hiking</option>
+                    <option value="camping">Camping</option>
+                    <option value="fishing">Fishing</option>
+                    <option value="kayaking">Kayaking</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <!-- Radio buttons share one name so only one experience level can be selected. -->
+                <fieldset class="nested-fieldset">
+                    <legend>Outdoor Experience Level</legend>
+                    <label class="inline-option" for="beginner">
+                        <input type="radio" id="beginner" name="experience" value="beginner">
+                        Beginner
+                    </label>
+                    <label class="inline-option" for="intermediate">
+                        <input type="radio" id="intermediate" name="experience" value="intermediate">
+                        Intermediate
+                    </label>
+                    <label class="inline-option" for="experienced">
+                        <input type="radio" id="experienced" name="experience" value="experienced">
+                        Experienced
+                    </label>
+                </fieldset>
+
+                <!-- Checkboxes allow visitors to select optional preferences independently. -->
+                <label class="inline-option" for="updates">
+                    <input type="checkbox" id="updates" name="updates" value="yes">
+                    Subscribe to portfolio updates
+                </label>
+
+                <label class="inline-option" for="reply-copy">
+                    <input type="checkbox" id="reply-copy" name="reply-copy" value="yes">
+                    Send me a copy of my responses
+                </label>
+
+                <label for="photo">Upload an Outdoor Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+            </fieldset>
+
+            <!-- Submit processes the form demonstration, while Reset clears entered values. -->
+            <div class="form-buttons">
+                <button type="submit">Submit Form</button>
+                <button type="reset" class="secondary-button">Reset Form</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lacy Howell | Outdoor Adventure Portfolio</p>
+    </footer>
+</body>
+</html>

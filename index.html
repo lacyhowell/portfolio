@@ -1,31 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outdoor Adventure Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <!-- Basic page information and mobile-friendly display settings. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lacy Howell's outdoor adventure portfolio and web development project.">
+    <title>Outdoor Adventure Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<h1>Outdoor Adventure Portfolio</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="contact.html">Contact Me</a>
-</nav>
-</header>
-<main>
-<h2>About Me</h2>
-<p>I enjoy spending time outdoors, especially hiking, camping, and exploring new trails. Building this website allows me to combine my interest in the outdoors with learning HTML and web design. I enjoy creating organized, user-friendly websites that are easy to navigate and visually appealing.</p>
-<p>My goal is to continue improving my web development skills throughout this course while creating a portfolio that demonstrates what I have learned. As I add more pages and features, I hope to build a website that is both informative and professional.</p>
-<h2>My Favorite Outdoor Websites</h2>
-<ul>
-<li><a href="https://www.nps.gov" target="_blank">National Park Service</a></li>
-<li><a href="https://www.alltrails.com" target="_blank">AllTrails Hiking Guides</a></li>
-<li><a href="https://www.rei.com" target="_blank">REI Outdoor Gear</a></li>
-</ul>
-<img src="outdoor-placeholder.png" alt="Mountain landscape">
-<img src="camping-placeholder.png" alt="Camping in the outdoors">
-</main>
-<footer><p>&copy;2026 Outdoor Adventure Portfolio</p></footer>
-</body></html>
+    <!-- The header introduces the portfolio and provides navigation between pages. -->
+    <header class="site-header">
+        <h1>Outdoor Adventure Portfolio</h1>
+        <p class="tagline">Exploring the outdoors while building new web design skills.</p>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- This section presents the required personal background and goals. -->
+        <section class="content-card" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>
+                I enjoy spending time outdoors, especially hiking, camping, and exploring new trails with my family.
+                Outdoor activities give me an opportunity to relax, experience new places, and create lasting memories.
+                Building this website allows me to combine those interests with what I am learning about HTML, CSS,
+                accessibility, and organized web design.
+            </p>
+            <p>
+                My goal is to continue improving my web development skills throughout this course while creating a
+                portfolio that demonstrates my progress. As I add more pages and features, I want the site to remain
+                easy to navigate, visually consistent, and useful on both desktop and mobile devices. In future units,
+                I plan to add more detailed projects and continue improving the site's design and interactivity.
+            </p>
+        </section>
+
+        <!-- The gallery includes two relevant images with descriptive alternative text. -->
+        <section class="content-card" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Outdoor Inspiration</h2>
+            <div class="image-grid">
+                <figure>
+                    <img src="outdoor-placeholder.png" alt="Mountain landscape beneath a bright sky">
+                    <figcaption>Exploring mountain scenery and new hiking trails.</figcaption>
+                </figure>
+                <figure>
+                    <img src="camping-placeholder.png" alt="Tent set up at an outdoor campsite">
+                    <figcaption>Camping is one of my favorite ways to spend time outdoors.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- This unordered list organizes three descriptive external hobby links. -->
+        <section class="content-card" aria-labelledby="links-heading">
+            <h2 id="links-heading">Favorite Outdoor Resources</h2>
+            <ul class="resource-list">
+                <li>
+                    <a href="https://www.nps.gov" target="_blank" rel="noopener noreferrer">
+                        Explore U.S. national parks through the National Park Service
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.alltrails.com" target="_blank" rel="noopener noreferrer">
+                        Find hiking routes and trail information on AllTrails
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.rei.com" target="_blank" rel="noopener noreferrer">
+                        Browse outdoor equipment and educational articles from REI
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- This callout directs visitors to the separate contact form page. -->
+        <section class="contact-callout" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
+            <p>Have a question, suggestion, or outdoor story to share?</p>
+            <a class="button-link" href="contact.html">Open the Contact Form</a>
+        </section>
+    </main>
+
+    <!-- The footer identifies the portfolio and the current year. -->
+    <footer>
+        <p>&copy; 2026 Lacy Howell | Outdoor Adventure Portfolio</p>
+    </footer>
+</body>
+</html>

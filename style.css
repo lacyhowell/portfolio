@@ -1,105 +1,290 @@
 /*
-    Unit 1 Portfolio Stylesheet
-    This CSS file controls the colors, layout, spacing, and typography
-    for the homepage. The color choices match the design document.
+    Unit 2 Portfolio Stylesheet
+    This stylesheet creates a consistent appearance for the homepage,
+    manual contact form, and AI-generated contact form.
 */
 
-/* General page styling */
+/* Use border-box sizing so padding does not cause elements to exceed their containers. */
+* {
+    box-sizing: border-box;
+}
+
+/* General page colors, typography, and spacing. */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F7F7F2;
-    color: #333333;
-    line-height: 1.6;
+    background-color: #f7f7f2;
+    color: #2f3437;
+    line-height: 1.65;
 }
 
-/* Header area */
-header {
-    background-color: #2E6F40;
-    color: white;
+/* Shared header styling creates a consistent identity on every page. */
+.site-header {
+    background-color: #2e6f40;
+    color: #ffffff;
     text-align: center;
-    padding: 30px 20px;
+    padding: 32px 20px 26px;
 }
 
-/* Navigation links */
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.tagline {
+    margin: 8px auto 0;
+    max-width: 700px;
+}
+
+/* Navigation links are large enough for mouse and touch users. */
 nav {
     margin-top: 20px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    background-color: #8B5E3C;
-    padding: 10px 14px;
-    margin: 5px;
     display: inline-block;
+    margin: 5px;
+    padding: 10px 16px;
     border-radius: 6px;
+    background-color: #7a4f32;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-nav a:hover {
-    background-color: #F28C28;
+nav a:hover,
+nav a:focus {
+    background-color: #c7681c;
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
 }
 
-/* Main content container */
+nav a[aria-current="page"] {
+    background-color: #c7681c;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Center the page content and limit line length for readability. */
 main {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
+    width: min(100% - 32px, 1000px);
+    margin: 32px auto;
 }
 
-/* Hero image */
-.hero img {
-    width: 100%;
-    border-radius: 10px;
-    border: 4px solid #2E6F40;
+h2 {
+    color: #245b34;
 }
 
-/* Introduction card */
-.intro-card {
-    background-color: white;
-    padding: 25px;
-    margin-top: 25px;
-    border-left: 8px solid #4A90E2;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+/* Reusable cards visually separate the homepage sections. */
+.content-card,
+.form-introduction,
+.contact-callout {
+    margin-bottom: 26px;
+    padding: 24px;
+    border-radius: 9px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.12);
 }
 
-/* Preview section */
-.page-preview {
-    margin-top: 30px;
+.content-card h2,
+.form-introduction h2,
+.contact-callout h2 {
+    margin-top: 0;
 }
 
-/* Card layout */
-.cards {
+/* Two-column image layout that becomes one column on smaller screens. */
+.image-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
 }
 
-article {
-    background-color: white;
-    padding: 20px;
-    border-top: 6px solid #F28C28;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+figure {
+    margin: 0;
 }
 
-/* Footer area */
-footer {
+figure img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border: 4px solid #2e6f40;
+    border-radius: 8px;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 0.95rem;
+}
+
+/* Resource links remain easy to identify and keyboard users receive a visible focus style. */
+.resource-list li {
+    margin: 10px 0;
+}
+
+.resource-list a,
+.contact-callout a {
+    color: #185ba6;
+}
+
+.resource-list a:hover,
+.resource-list a:focus {
+    color: #923f08;
+}
+
+.contact-callout {
     text-align: center;
-    background-color: #333333;
-    color: white;
-    padding: 15px;
-    margin-top: 40px;
+    border-top: 6px solid #c7681c;
 }
 
-/* Mobile-friendly layout */
+.button-link {
+    display: inline-block;
+    padding: 11px 18px;
+    border-radius: 6px;
+    background-color: #2e6f40;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button-link:hover,
+.button-link:focus {
+    background-color: #7a4f32;
+    outline: 3px solid #2e6f40;
+    outline-offset: 3px;
+}
+
+/* Contact forms use a readable width and clear visual grouping. */
+form {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 26px;
+    border-radius: 9px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.12);
+}
+
+fieldset {
+    margin: 0 0 24px;
+    padding: 20px;
+    border: 2px solid #2e6f40;
+    border-radius: 7px;
+}
+
+legend {
+    padding: 0 8px;
+    color: #245b34;
+    font-weight: bold;
+}
+
+.nested-fieldset {
+    margin-top: 20px;
+    border-width: 1px;
+}
+
+form label:not(.inline-option) {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    border: 1px solid #686868;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #2f3437;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid #e49a42;
+    outline-offset: 2px;
+}
+
+.inline-option {
+    display: block;
+    margin: 10px 0;
+}
+
+.inline-option input {
+    margin-right: 7px;
+}
+
+.form-buttons {
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    padding: 12px 21px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #2e6f40;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #7a4f32;
+}
+
+.secondary-button {
+    background-color: #555b60;
+}
+
+.secondary-button:hover {
+    background-color: #34383b;
+}
+
+/* Shared footer appears beneath all page content. */
+footer {
+    margin-top: 42px;
+    padding: 18px;
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile layout stacks images and navigation for narrow screens. */
 @media screen and (max-width: 700px) {
-    .cards {
+    .image-grid {
         grid-template-columns: 1fr;
     }
 
     nav a {
         display: block;
-        margin: 8px auto;
-        max-width: 200px;
+        max-width: 240px;
+        margin: 9px auto;
+    }
+
+    form,
+    fieldset,
+    .content-card,
+    .form-introduction,
+    .contact-callout {
+        padding: 18px;
     }
 }
