@@ -1,118 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic page information and responsive display settings. -->
+    <!-- Metadata and the shared stylesheet keep the contact page responsive and visually consistent. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact form for Lacy Howell's outdoor adventure portfolio.">
-    <title>Contact Me | Outdoor Adventure Portfolio</title>
+    <title>Contact | Lacy Howell</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- The shared header keeps navigation consistent with the homepage. -->
-    <header class="site-header">
-        <h1>Contact Me</h1>
-        <p class="tagline">Use the form below to send a question, comment, or suggestion.</p>
+    <!-- This compact header repeats the same site identity and navigation used on the homepage. -->
+    <header class="site-header interior-header">
+        <div class="header-inner">
+            <a class="site-name" href="index.html">Lacy Howell</a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+            </nav>
+        </div>
 
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="contact.html" aria-current="page">Contact Me</a>
-        </nav>
+        <section class="page-intro" aria-labelledby="page-heading">
+            <p class="eyebrow">Manual Contact Form</p>
+            <h1 id="page-heading">Let's connect.</h1>
+            <p>Use this form to send a question, suggestion, or outdoor recommendation.</p>
+        </section>
     </header>
 
     <main>
-        <section class="form-introduction" aria-labelledby="form-heading">
-            <h2 id="form-heading">Portfolio Contact Form</h2>
-            <p>
-                Required fields are marked with an asterisk (*). This class project demonstrates the layout and
-                accessibility of a contact form; it does not send information to a live database.
-            </p>
+        <!-- The introduction explains the purpose of the form and identifies required fields. -->
+        <section class="form-introduction" aria-labelledby="instructions-heading">
+            <h2 id="instructions-heading">Contact information</h2>
+            <p>Fields marked with an asterisk (*) are required. This demonstration form does not store or email responses.</p>
         </section>
 
-        <!-- The form uses labels, fieldsets, and legends to organize related controls accessibly. -->
+        <!-- The form contains more than ten field types and uses fieldsets for accessible grouping. -->
         <form action="#" method="post" enctype="multipart/form-data">
-            <!-- This fieldset collects the visitor's basic contact information. -->
             <fieldset>
-                <legend>Contact Information</legend>
+                <legend>Your details</legend>
 
-                <label for="full-name">Full Name *</label>
-                <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+                <div class="form-grid">
+                    <div class="field-group">
+                        <label for="full-name">Full name *</label>
+                        <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+                    </div>
 
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
+                    <div class="field-group">
+                        <label for="email">Email address *</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
 
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="555-555-5555">
+                    <div class="field-group">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="555-555-5555">
+                    </div>
 
-                <label for="subject">Subject *</label>
-                <input type="text" id="subject" name="subject" required>
+                    <div class="field-group">
+                        <label for="contact-date">Preferred contact date</label>
+                        <input type="date" id="contact-date" name="contact-date">
+                    </div>
 
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="7" required></textarea>
+                    <div class="field-group full-width">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="topic">Reason for contacting me</label>
+                        <select id="topic" name="topic">
+                            <option value="">Choose a topic</option>
+                            <option value="website">Website feedback</option>
+                            <option value="outdoors">Outdoor recommendation</option>
+                            <option value="school">School or project question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="group-size">Number of people in your group</label>
+                        <input type="number" id="group-size" name="group-size" min="1" max="20" value="1">
+                    </div>
+
+                    <div class="field-group full-width">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="7" required></textarea>
+                    </div>
+
+                    <div class="field-group full-width">
+                        <label for="attachment">Optional file attachment</label>
+                        <input type="file" id="attachment" name="attachment" accept=".jpg,.jpeg,.png,.pdf">
+                        <p class="field-note">Accepted formats: JPG, PNG, or PDF.</p>
+                    </div>
+                </div>
             </fieldset>
 
-            <!-- This fieldset demonstrates additional input types requested by the assignment. -->
+            <!-- Radio buttons are grouped so visitors can choose one preferred response method. -->
             <fieldset>
-                <legend>Additional Information</legend>
+                <legend>Response preferences</legend>
+                <p class="group-prompt">How would you prefer to receive a response?</p>
 
-                <label for="contact-date">Preferred Contact Date</label>
-                <input type="date" id="contact-date" name="contact-date">
-
-                <label for="group-size">Number of People in Your Outdoor Group</label>
-                <input type="number" id="group-size" name="group-size" min="1" max="20" value="1">
-
-                <label for="activity">Favorite Outdoor Activity</label>
-                <select id="activity" name="activity">
-                    <option value="">Select an activity</option>
-                    <option value="hiking">Hiking</option>
-                    <option value="camping">Camping</option>
-                    <option value="fishing">Fishing</option>
-                    <option value="kayaking">Kayaking</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <!-- Radio buttons share one name so only one experience level can be selected. -->
-                <fieldset class="nested-fieldset">
-                    <legend>Outdoor Experience Level</legend>
-                    <label class="inline-option" for="beginner">
-                        <input type="radio" id="beginner" name="experience" value="beginner">
-                        Beginner
-                    </label>
-                    <label class="inline-option" for="intermediate">
-                        <input type="radio" id="intermediate" name="experience" value="intermediate">
-                        Intermediate
-                    </label>
-                    <label class="inline-option" for="experienced">
-                        <input type="radio" id="experienced" name="experience" value="experienced">
-                        Experienced
-                    </label>
-                </fieldset>
-
-                <!-- Checkboxes allow visitors to select optional preferences independently. -->
-                <label class="inline-option" for="updates">
-                    <input type="checkbox" id="updates" name="updates" value="yes">
-                    Subscribe to portfolio updates
+                <label class="choice-option">
+                    <input type="radio" name="response-method" value="email" checked>
+                    <span>Email</span>
                 </label>
-
-                <label class="inline-option" for="reply-copy">
-                    <input type="checkbox" id="reply-copy" name="reply-copy" value="yes">
-                    Send me a copy of my responses
+                <label class="choice-option">
+                    <input type="radio" name="response-method" value="phone">
+                    <span>Phone</span>
                 </label>
-
-                <label for="photo">Upload an Outdoor Photo</label>
-                <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+                <label class="choice-option">
+                    <input type="radio" name="response-method" value="no-response">
+                    <span>No response needed</span>
+                </label>
             </fieldset>
 
-            <!-- Submit processes the form demonstration, while Reset clears entered values. -->
+            <!-- Checkboxes allow multiple independent selections and confirm visitor consent. -->
+            <fieldset>
+                <legend>Interests and confirmation</legend>
+                <p class="group-prompt">Which topics interest you? Select all that apply.</p>
+
+                <div class="checkbox-grid">
+                    <label class="choice-option">
+                        <input type="checkbox" name="interests" value="hiking">
+                        <span>Hiking</span>
+                    </label>
+                    <label class="choice-option">
+                        <input type="checkbox" name="interests" value="camping">
+                        <span>Camping</span>
+                    </label>
+                    <label class="choice-option">
+                        <input type="checkbox" name="interests" value="web-design">
+                        <span>Web design</span>
+                    </label>
+                </div>
+
+                <label class="choice-option consent-option">
+                    <input type="checkbox" name="permission" required>
+                    <span>I understand this is a classroom demonstration form. *</span>
+                </label>
+            </fieldset>
+
+            <!-- Submit and reset buttons complete the form's primary actions. -->
             <div class="form-buttons">
-                <button type="submit">Submit Form</button>
-                <button type="reset" class="secondary-button">Reset Form</button>
+                <button type="submit">Send Message</button>
+                <button class="secondary-button" type="reset">Clear Form</button>
             </div>
         </form>
     </main>
 
     <footer>
-        <p>&copy; 2026 Lacy Howell | Outdoor Adventure Portfolio</p>
+        <p>&copy; 2026 Lacy Howell</p>
+        <p>Outdoor Adventure Portfolio</p>
     </footer>
 </body>
 </html>

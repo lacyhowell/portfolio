@@ -1,191 +1,423 @@
 /*
     Unit 2 Portfolio Stylesheet
-    This stylesheet creates a consistent appearance for the homepage,
-    manual contact form, and AI-generated contact form.
+    Modern visual system shared by the homepage, manual form, and AI-assisted form.
 */
 
-/* Use border-box sizing so padding does not cause elements to exceed their containers. */
+/* Reusable design values make the color palette and spacing consistent. */
+:root {
+    --navy: #102a43;
+    --navy-soft: #243b53;
+    --teal: #147d7e;
+    --teal-dark: #0f6465;
+    --aqua: #d9f0ef;
+    --sand: #f4efe7;
+    --paper: #ffffff;
+    --ink: #1f2933;
+    --muted: #627d98;
+    --line: #d9e2ec;
+    --shadow: 0 18px 45px rgba(16, 42, 67, 0.12);
+    --small-shadow: 0 8px 24px rgba(16, 42, 67, 0.09);
+    --radius: 20px;
+}
+
 * {
     box-sizing: border-box;
 }
 
-/* General page colors, typography, and spacing. */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f7f2;
-    color: #2f3437;
-    line-height: 1.65;
+    background:
+        radial-gradient(circle at top right, rgba(20, 125, 126, 0.08), transparent 28rem),
+        #f7f9fb;
+    color: var(--ink);
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
 }
 
-/* Shared header styling creates a consistent identity on every page. */
+a {
+    color: inherit;
+}
+
 .site-header {
-    background-color: #2e6f40;
-    color: #ffffff;
-    text-align: center;
-    padding: 32px 20px 26px;
+    overflow: hidden;
+    background:
+        linear-gradient(120deg, rgba(16, 42, 67, 0.97), rgba(20, 125, 126, 0.91)),
+        url("trail-hiker.jpg") center 54% / cover;
+    color: var(--paper);
 }
 
-.site-header h1 {
-    margin: 0;
-    font-size: clamp(2rem, 5vw, 3rem);
+.header-inner {
+    width: min(100% - 40px, 1120px);
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-.tagline {
-    margin: 8px auto 0;
-    max-width: 700px;
+.site-name {
+    color: var(--paper);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-decoration: none;
 }
 
-/* Navigation links are large enough for mouse and touch users. */
 nav {
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 nav a {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 16px;
-    border-radius: 6px;
-    background-color: #7a4f32;
-    color: #ffffff;
+    padding: 9px 14px;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.86);
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 nav a:hover,
-nav a:focus {
-    background-color: #c7681c;
-    outline: 3px solid #ffffff;
-    outline-offset: 2px;
-}
-
+nav a:focus-visible,
 nav a[aria-current="page"] {
-    background-color: #c7681c;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    background: rgba(255, 255, 255, 0.16);
+    color: var(--paper);
 }
 
-/* Center the page content and limit line length for readability. */
-main {
-    width: min(100% - 32px, 1000px);
-    margin: 32px auto;
+nav a:hover {
+    transform: translateY(-1px);
 }
 
-h2 {
-    color: #245b34;
-}
-
-/* Reusable cards visually separate the homepage sections. */
-.content-card,
-.form-introduction,
-.contact-callout {
-    margin-bottom: 26px;
-    padding: 24px;
-    border-radius: 9px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.12);
-}
-
-.content-card h2,
-.form-introduction h2,
-.contact-callout h2 {
-    margin-top: 0;
-}
-
-/* Two-column image layout that becomes one column on smaller screens. */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-}
-
-figure {
-    margin: 0;
-}
-
-figure img {
-    display: block;
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border: 4px solid #2e6f40;
-    border-radius: 8px;
-}
-
-figcaption {
-    margin-top: 8px;
-    font-size: 0.95rem;
-}
-
-/* Resource links remain easy to identify and keyboard users receive a visible focus style. */
-.resource-list li {
-    margin: 10px 0;
-}
-
-.resource-list a,
-.contact-callout a {
-    color: #185ba6;
-}
-
-.resource-list a:hover,
-.resource-list a:focus {
-    color: #923f08;
-}
-
-.contact-callout {
-    text-align: center;
-    border-top: 6px solid #c7681c;
-}
-
-.button-link {
-    display: inline-block;
-    padding: 11px 18px;
-    border-radius: 6px;
-    background-color: #2e6f40;
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.button-link:hover,
-.button-link:focus {
-    background-color: #7a4f32;
-    outline: 3px solid #2e6f40;
+nav a:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f6c85f;
     outline-offset: 3px;
 }
 
-/* Contact forms use a readable width and clear visual grouping. */
-form {
-    max-width: 780px;
+.hero,
+.page-intro {
+    width: min(100% - 40px, 1120px);
     margin: 0 auto;
-    padding: 26px;
-    border-radius: 9px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.12);
+}
+
+.hero {
+    min-height: 560px;
+    padding: 90px 0 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero h1,
+.page-intro h1 {
+    max-width: 780px;
+    margin: 12px 0 18px;
+    font-size: clamp(2.8rem, 7vw, 5.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.hero-text,
+.page-intro p:last-child {
+    max-width: 690px;
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 1.12rem;
+}
+
+.eyebrow,
+.section-label {
+    margin: 0;
+    color: var(--teal);
+    font-size: 0.79rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    color: #b9ece8;
+}
+
+.primary-button,
+.light-button,
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.primary-button {
+    background: var(--paper);
+    color: var(--navy);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+.primary-button:hover,
+.light-button:hover,
+.button-link:hover {
+    transform: translateY(-2px);
+}
+
+.interior-header {
+    background:
+        linear-gradient(120deg, rgba(16, 42, 67, 0.98), rgba(20, 125, 126, 0.94)),
+        url("mountain-hiker.jpg") center 58% / cover;
+}
+
+.ai-header {
+    background:
+        linear-gradient(120deg, rgba(22, 32, 62, 0.97), rgba(73, 83, 153, 0.9)),
+        url("trail-hiker.jpg") center 55% / cover;
+}
+
+.page-intro {
+    padding: 70px 0 80px;
+}
+
+.page-intro h1 {
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+}
+
+main {
+    width: min(100% - 40px, 1120px);
+    margin: 70px auto;
+}
+
+h2 {
+    margin: 7px 0 18px;
+    color: var(--navy);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+
+.content-card,
+.form-introduction,
+form {
+    border: 1px solid rgba(217, 226, 236, 0.82);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--small-shadow);
+}
+
+.content-card {
+    padding: clamp(28px, 5vw, 52px);
+}
+
+.about-grid,
+.resources-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.45fr);
+    gap: clamp(32px, 7vw, 90px);
+    align-items: start;
+}
+
+.about-copy p:first-child {
+    margin-top: 0;
+}
+
+.about-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-section {
+    margin: 72px 0;
+}
+
+.section-heading {
+    margin-bottom: 26px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: 24px;
+}
+
+.photo-card {
+    position: relative;
+    min-height: 480px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--navy);
+    box-shadow: var(--shadow);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    display: block;
+    object-fit: cover;
+    transition: transform 500ms ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.025);
+}
+
+.photo-card figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 70px 24px 24px;
+    display: grid;
+    gap: 4px;
+    background: linear-gradient(transparent, rgba(8, 25, 42, 0.9));
+    color: var(--paper);
+}
+
+.photo-card figcaption strong {
+    font-size: 1.25rem;
+}
+
+.photo-card figcaption span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.resource-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.resource-list li + li {
+    border-top: 1px solid var(--line);
+}
+
+.resource-list a {
+    padding: 18px 4px;
+    display: grid;
+    gap: 3px;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.resource-list a:hover span {
+    color: var(--teal);
+}
+
+.resource-list span {
+    font-weight: 800;
+    transition: color 160ms ease;
+}
+
+.resource-list small {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.contact-callout {
+    margin-top: 72px;
+    padding: clamp(30px, 6vw, 58px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    border-radius: var(--radius);
+    background: linear-gradient(120deg, var(--navy), var(--teal-dark));
+    color: var(--paper);
+    box-shadow: var(--shadow);
+}
+
+.contact-callout h2 {
+    max-width: 760px;
+    margin-bottom: 0;
+    color: var(--paper);
+}
+
+.light-label {
+    color: #a9e3df;
+}
+
+.light-button {
+    flex: 0 0 auto;
+    background: var(--paper);
+    color: var(--navy);
+}
+
+.form-introduction {
+    max-width: 860px;
+    margin: 0 auto 24px;
+    padding: 24px 28px;
+}
+
+.form-introduction h2 {
+    margin-bottom: 8px;
+    font-size: 1.55rem;
+}
+
+.form-introduction p {
+    margin: 0;
+    color: var(--muted);
+}
+
+form {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 44px);
 }
 
 fieldset {
-    margin: 0 0 24px;
-    padding: 20px;
-    border: 2px solid #2e6f40;
-    border-radius: 7px;
+    margin: 0 0 30px;
+    padding: 0;
+    border: 0;
+}
+
+fieldset + fieldset {
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
 }
 
 legend {
-    padding: 0 8px;
-    color: #245b34;
-    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+    color: var(--navy);
+    font-size: 1.25rem;
+    font-weight: 800;
 }
 
-.nested-fieldset {
-    margin-top: 20px;
-    border-width: 1px;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
-form label:not(.inline-option) {
+.field-group {
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label:not(.choice-option) {
     display: block;
-    margin-top: 15px;
-    font-weight: bold;
+    margin-bottom: 7px;
+    color: var(--navy-soft);
+    font-weight: 750;
 }
 
 input[type="text"],
@@ -197,94 +429,224 @@ input[type="file"],
 select,
 textarea {
     width: 100%;
-    margin-top: 6px;
-    padding: 11px;
-    border: 1px solid #686868;
-    border-radius: 4px;
-    background-color: #ffffff;
-    color: #2f3437;
+    min-height: 48px;
+    padding: 11px 13px;
+    border: 1px solid #bcccdc;
+    border-radius: 11px;
+    background: #fbfdff;
+    color: var(--ink);
     font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
 textarea {
+    min-height: 150px;
     resize: vertical;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #829ab1;
 }
 
 input:focus,
 select:focus,
-textarea:focus,
-button:focus {
-    outline: 3px solid #e49a42;
-    outline-offset: 2px;
+textarea:focus {
+    border-color: var(--teal);
+    background: var(--paper);
+    box-shadow: 0 0 0 4px rgba(20, 125, 126, 0.12);
 }
 
-.inline-option {
-    display: block;
-    margin: 10px 0;
+.field-note,
+.group-prompt {
+    color: var(--muted);
+    font-size: 0.92rem;
 }
 
-.inline-option input {
-    margin-right: 7px;
+.field-note {
+    margin: 6px 0 0;
+}
+
+.group-prompt {
+    margin: -8px 0 14px;
+}
+
+.choice-option {
+    margin: 9px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.choice-option input {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    accent-color: var(--teal);
+}
+
+.checkbox-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 26px;
+}
+
+.consent-option {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--aqua);
+}
+
+.nested-fieldset {
+    margin-top: 24px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.nested-fieldset legend {
+    width: auto;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 1rem;
 }
 
 .form-buttons {
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 button {
-    margin: 5px;
-    padding: 12px 21px;
+    min-height: 48px;
+    padding: 12px 20px;
     border: 0;
-    border-radius: 5px;
-    background-color: #2e6f40;
-    color: #ffffff;
+    border-radius: 999px;
+    background: var(--teal);
+    color: var(--paper);
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
+    font: inherit;
+    font-weight: 800;
+    transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
 button:hover {
-    background-color: #7a4f32;
+    background: var(--teal-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(20, 125, 126, 0.22);
 }
 
 .secondary-button {
-    background-color: #555b60;
+    background: #e9eff5;
+    color: var(--navy);
 }
 
 .secondary-button:hover {
-    background-color: #34383b;
+    background: #d9e2ec;
+    box-shadow: none;
 }
 
-/* Shared footer appears beneath all page content. */
 footer {
-    margin-top: 42px;
-    padding: 18px;
-    background-color: #333333;
-    color: #ffffff;
-    text-align: center;
+    width: min(100% - 40px, 1120px);
+    margin: 0 auto;
+    padding: 28px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.92rem;
 }
 
 footer p {
     margin: 0;
 }
 
-/* Mobile layout stacks images and navigation for narrow screens. */
-@media screen and (max-width: 700px) {
-    .image-grid {
+@media (max-width: 780px) {
+    .header-inner,
+    .contact-callout,
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 70px 0 80px;
+    }
+
+    .about-grid,
+    .resources-grid,
+    .image-grid,
+    .form-grid {
         grid-template-columns: 1fr;
     }
 
-    nav a {
-        display: block;
-        max-width: 240px;
-        margin: 9px auto;
+    .photo-card,
+    .photo-card img {
+        min-height: 430px;
     }
 
-    form,
-    fieldset,
-    .content-card,
-    .form-introduction,
+    .landscape-photo,
+    .landscape-photo img {
+        min-height: 330px;
+    }
+
     .contact-callout {
-        padding: 18px;
+        align-items: stretch;
+    }
+
+    .light-button {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-inner,
+    .hero,
+    .page-intro,
+    main,
+    footer {
+        width: min(100% - 26px, 1120px);
+    }
+
+    .header-inner {
+        padding: 18px 0;
+    }
+
+    .hero h1,
+    .page-intro h1 {
+        letter-spacing: -0.035em;
+    }
+
+    nav a {
+        padding: 8px 10px;
+    }
+
+    main {
+        margin-top: 42px;
+    }
+
+    .content-card,
+    form {
+        padding: 22px;
+    }
+
+    .photo-card,
+    .photo-card img {
+        min-height: 380px;
+    }
+
+    .form-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
     }
 }
