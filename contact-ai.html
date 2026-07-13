@@ -1,102 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This standalone AI-assisted version uses the same stylesheet for fair visual comparison. -->
+    <!-- This page contains the AI-generated version of the contact form. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-assisted contact form for Lacy Howell's portfolio assignment.">
-    <title>AI Contact Form | Lacy Howell</title>
+    <title>AI Contact Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header interior-header ai-header">
-        <div class="header-inner">
-            <a class="site-name" href="index.html">Lacy Howell</a>
-            <nav aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="contact.html">Final Form</a>
-                <a href="contact-ai.html" aria-current="page">AI Version</a>
-            </nav>
-        </div>
 
-        <section class="page-intro" aria-labelledby="ai-page-heading">
-            <p class="eyebrow">AI-Generated Version</p>
-            <h1 id="ai-page-heading">Portfolio contact form.</h1>
-            <p>This separate version demonstrates how an AI tool organized the same required form elements.</p>
-        </section>
+    <header>
+        <h1>AI-Generated Contact Form</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Manual Form</a>
+            <a href="contact-ai.html">AI Form</a>
+        </nav>
     </header>
 
     <main>
-        <section class="form-introduction" aria-labelledby="ai-instructions-heading">
-            <h2 id="ai-instructions-heading">Send a message</h2>
-            <p>Please complete the form below. Required fields are marked with an asterisk (*).</p>
-        </section>
+        <section>
+            <h2>Contact Form</h2>
 
-        <!-- The AI-assisted form uses labels, logical grouping, and a variety of input types. -->
-        <form action="#" method="post" enctype="multipart/form-data">
-            <fieldset>
-                <legend>Basic information</legend>
+            <p>
+                This is the AI-generated version of the contact form used for comparison.
+            </p>
 
-                <label for="ai-name">Name *</label>
-                <input type="text" id="ai-name" name="name" autocomplete="name" required>
+            <!-- The AI version also includes labels, fieldsets, and different input types. -->
+            <form action="#" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Personal Information</legend>
 
-                <label for="ai-email">Email *</label>
-                <input type="email" id="ai-email" name="email" autocomplete="email" required>
+                    <label for="ai-name">Name *</label>
+                    <input type="text" id="ai-name" name="name" required>
 
-                <label for="ai-subject">Subject *</label>
-                <input type="text" id="ai-subject" name="subject" required>
+                    <label for="ai-email">Email *</label>
+                    <input type="email" id="ai-email" name="email" required>
 
-                <label for="ai-message">Message *</label>
-                <textarea id="ai-message" name="message" rows="6" required></textarea>
-            </fieldset>
+                    <label for="ai-subject">Subject *</label>
+                    <input type="text" id="ai-subject" name="subject" required>
 
-            <fieldset>
-                <legend>Additional details</legend>
+                    <label for="ai-message">Message *</label>
+                    <textarea id="ai-message" name="message" rows="6" required></textarea>
+                </fieldset>
 
-                <label for="ai-category">Message category</label>
-                <select id="ai-category" name="category">
-                    <option value="general">General question</option>
-                    <option value="feedback">Website feedback</option>
-                    <option value="outdoor">Outdoor activity</option>
-                </select>
+                <fieldset>
+                    <legend>Additional Details</legend>
 
-                <label for="ai-date">Preferred date</label>
-                <input type="date" id="ai-date" name="preferred-date">
+                    <label for="ai-topic">Topic</label>
+                    <select id="ai-topic" name="topic">
+                        <option value="general">General Question</option>
+                        <option value="feedback">Website Feedback</option>
+                        <option value="outdoors">Outdoor Activities</option>
+                    </select>
 
-                <label for="ai-number">Number of participants</label>
-                <input type="number" id="ai-number" name="participants" min="1" max="20">
+                    <label for="ai-date">Preferred Date</label>
+                    <input type="date" id="ai-date" name="date">
 
-                <label for="ai-file">Upload a file</label>
-                <input type="file" id="ai-file" name="file" accept=".jpg,.jpeg,.png,.pdf">
+                    <label for="ai-number">Number of Participants</label>
+                    <input type="number" id="ai-number" name="participants" min="1" max="20">
 
-                <fieldset class="nested-fieldset">
-                    <legend>Preferred contact method</legend>
-                    <label class="choice-option">
-                        <input type="radio" name="ai-contact-method" value="email" checked>
-                        <span>Email</span>
+                    <label for="ai-file">Upload a File</label>
+                    <input type="file" id="ai-file" name="file">
+
+                    <p>Preferred Contact Method:</p>
+
+                    <label class="choice-label">
+                        <input type="radio" name="ai-method" value="email" checked>
+                        Email
                     </label>
-                    <label class="choice-option">
-                        <input type="radio" name="ai-contact-method" value="phone">
-                        <span>Phone</span>
+
+                    <label class="choice-label">
+                        <input type="radio" name="ai-method" value="phone">
+                        Phone
+                    </label>
+
+                    <label class="choice-label">
+                        <input type="checkbox" name="updates">
+                        Send Me Updates
                     </label>
                 </fieldset>
 
-                <label class="choice-option consent-option">
-                    <input type="checkbox" name="updates">
-                    <span>Send me occasional portfolio updates.</span>
-                </label>
-            </fieldset>
-
-            <div class="form-buttons">
-                <button type="submit">Submit Form</button>
-                <button class="secondary-button" type="reset">Reset Form</button>
-            </div>
-        </form>
+                <div class="button-group">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Lacy Howell</p>
-        <p>Outdoor Adventure Portfolio</p>
     </footer>
+
 </body>
 </html>

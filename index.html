@@ -1,136 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic metadata improves browser compatibility, mobile display, and search descriptions. -->
+    <!-- This information helps the page display correctly in browsers and on mobile devices. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lacy Howell's personal outdoor adventure and web development portfolio.">
-    <title>Lacy Howell | Outdoor Portfolio</title>
+    <title>Lacy Howell Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- The shared site header introduces the portfolio and provides consistent page navigation. -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a class="site-name" href="index.html">Lacy Howell</a>
-            <nav aria-label="Main navigation">
-                <a href="index.html" aria-current="page">Home</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
 
-        <!-- The hero section quickly communicates the site's theme and offers a clear action. -->
-        <section class="hero" aria-labelledby="hero-heading">
-            <p class="eyebrow">Outdoor Adventure + Web Design</p>
-            <h1 id="hero-heading">Exploring new trails and building new skills.</h1>
-            <p class="hero-text">
-                A personal portfolio about family adventures, outdoor interests, and my progress
-                as I learn to create accessible and responsive websites.
-            </p>
-            <a class="primary-button" href="contact.html">Contact Me</a>
-        </section>
+    <!-- The header displays the website title and navigation links. -->
+    <header>
+        <h1>Lacy Howell's Portfolio</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
     </header>
 
+    <!-- The main section contains information about me, pictures, and useful links. -->
     <main>
-        <!-- This section provides the two required paragraphs about personal background and goals. -->
-        <section class="content-card about-grid" aria-labelledby="about-heading">
-            <div>
-                <p class="section-label">About</p>
-                <h2 id="about-heading">A little about me</h2>
-            </div>
-            <div class="about-copy">
-                <p>
-                    I enjoy spending time outdoors, especially hiking, camping, and exploring new trails
-                    with my family. Outdoor activities give me an opportunity to relax, experience new
-                    places, and create lasting memories. Building this website allows me to combine those
-                    interests with what I am learning about HTML, CSS, accessibility, and organized web design.
-                </p>
-                <p>
-                    My goal is to continue improving my web development skills throughout this course while
-                    creating a portfolio that demonstrates my progress. As I add more pages and features, I
-                    want the site to remain easy to navigate, visually consistent, and useful on both desktop
-                    and mobile devices. In future units, I plan to add more detailed projects and continue
-                    improving the site's design and interactivity.
-                </p>
-            </div>
+        <section>
+            <h2>Welcome to My Portfolio</h2>
+
+            <p>
+                My name is Lacy Howell, and I enjoy spending time outdoors with my family.
+                Some of my favorite activities include hiking, camping, and visiting new places.
+                Being outdoors gives me a chance to relax, explore, and make new memories.
+            </p>
+
+            <p>
+                I am also learning more about web design and development. My goal is to improve
+                my HTML and CSS skills while creating websites that are organized, easy to use,
+                and accessible on different devices. I plan to continue adding new pages and
+                projects to this portfolio as I progress through the course.
+            </p>
         </section>
 
-        <!-- The gallery uses two realistic photographs with descriptive alternative text. -->
-        <section class="gallery-section" aria-labelledby="gallery-heading">
-            <div class="section-heading">
-                <p class="section-label">Inspiration</p>
-                <h2 id="gallery-heading">Outdoor places that inspire me</h2>
-            </div>
+        <!-- These images represent my interest in hiking and outdoor adventures. -->
+        <section>
+            <h2>Outdoor Adventures</h2>
 
-            <div class="image-grid">
-                <figure class="photo-card portrait-photo">
-                    <img
-                        src="mountain-hiker.jpg"
-                        alt="Hiker with a backpack looking toward snowy mountain peaks"
-                    >
-                    <figcaption>
-                        <strong>Mountain views</strong>
-                        <span>Discovering new scenery makes every hike memorable.</span>
-                    </figcaption>
-                </figure>
+            <img
+                src="mountain-hiker.jpg"
+                alt="Hiker with a backpack looking toward snowy mountain peaks"
+                class="portfolio-image"
+            >
 
-                <figure class="photo-card landscape-photo">
-                    <img
-                        src="trail-hiker.jpg"
-                        alt="Hiker walking along a wide trail surrounded by rugged mountains"
-                    >
-                    <figcaption>
-                        <strong>New trails</strong>
-                        <span>Exploring unfamiliar paths is one of my favorite outdoor activities.</span>
-                    </figcaption>
-                </figure>
-            </div>
+            <img
+                src="trail-hiker.jpg"
+                alt="Hiker walking along a mountain trail"
+                class="portfolio-image"
+            >
         </section>
 
-        <!-- This unordered list organizes the three required descriptive external links. -->
-        <section class="content-card resources-grid" aria-labelledby="resources-heading">
-            <div>
-                <p class="section-label">Resources</p>
-                <h2 id="resources-heading">Websites I visit for outdoor ideas</h2>
-                <p>These websites help me plan trips, discover trails, and learn more about outdoor activities.</p>
-            </div>
+        <!-- This unordered list contains three websites related to my outdoor interests. -->
+        <section>
+            <h2>Websites I Visit</h2>
 
-            <ul class="resource-list">
+            <ul>
                 <li>
-                    <a href="https://www.nps.gov" target="_blank" rel="noopener noreferrer">
-                        <span>National Park Service</span>
-                        <small>Explore parks, maps, alerts, and trip-planning information.</small>
+                    <a href="https://www.nps.gov" target="_blank">
+                        National Park Service
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.alltrails.com" target="_blank" rel="noopener noreferrer">
-                        <span>AllTrails</span>
-                        <small>Find hiking routes, trail ratings, and recent visitor reviews.</small>
+                    <a href="https://www.alltrails.com" target="_blank">
+                        AllTrails Hiking Guides
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.rei.com" target="_blank" rel="noopener noreferrer">
-                        <span>REI Co-op</span>
-                        <small>Browse outdoor gear and practical educational articles.</small>
+                    <a href="https://www.rei.com" target="_blank">
+                        REI Outdoor Resources
                     </a>
                 </li>
             </ul>
         </section>
-
-        <!-- This callout links visitors to the separate final contact form page. -->
-        <section class="contact-callout" aria-labelledby="contact-heading">
-            <div>
-                <p class="section-label light-label">Connect</p>
-                <h2 id="contact-heading">Have a question or an outdoor story to share?</h2>
-            </div>
-            <a class="light-button" href="contact.html">Open Contact Form</a>
-        </section>
     </main>
 
-    <!-- The footer identifies the portfolio and current year. -->
+    <!-- The footer appears at the bottom of the page. -->
     <footer>
         <p>&copy; 2026 Lacy Howell</p>
-        <p>Outdoor Adventure Portfolio</p>
     </footer>
+
 </body>
 </html>

@@ -1,423 +1,95 @@
-/*
-    Unit 2 Portfolio Stylesheet
-    Modern visual system shared by the homepage, manual form, and AI-assisted form.
-*/
-
-/* Reusable design values make the color palette and spacing consistent. */
-:root {
-    --navy: #102a43;
-    --navy-soft: #243b53;
-    --teal: #147d7e;
-    --teal-dark: #0f6465;
-    --aqua: #d9f0ef;
-    --sand: #f4efe7;
-    --paper: #ffffff;
-    --ink: #1f2933;
-    --muted: #627d98;
-    --line: #d9e2ec;
-    --shadow: 0 18px 45px rgba(16, 42, 67, 0.12);
-    --small-shadow: 0 8px 24px rgba(16, 42, 67, 0.09);
-    --radius: 20px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* Basic styles for the Unit 2 personal portfolio website. */
 
 body {
     margin: 0;
-    background:
-        radial-gradient(circle at top right, rgba(20, 125, 126, 0.08), transparent 28rem),
-        #f7f9fb;
-    color: var(--ink);
-    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.7;
+    background-color: #f2f5f7;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
-a {
-    color: inherit;
+header {
+    background-color: #234e52;
+    color: white;
+    padding: 25px;
+    text-align: center;
 }
 
-.site-header {
-    overflow: hidden;
-    background:
-        linear-gradient(120deg, rgba(16, 42, 67, 0.97), rgba(20, 125, 126, 0.91)),
-        url("trail-hiker.jpg") center 54% / cover;
-    color: var(--paper);
-}
-
-.header-inner {
-    width: min(100% - 40px, 1120px);
-    margin: 0 auto;
-    padding: 24px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.site-name {
-    color: var(--paper);
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+header h1 {
+    margin: 0 0 15px;
 }
 
 nav a {
-    padding: 9px 14px;
-    border-radius: 999px;
-    color: rgba(255, 255, 255, 0.86);
-    font-weight: 700;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
     text-decoration: none;
-    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-nav a:hover,
-nav a:focus-visible,
-nav a[aria-current="page"] {
-    background: rgba(255, 255, 255, 0.16);
-    color: var(--paper);
 }
 
 nav a:hover {
-    transform: translateY(-1px);
-}
-
-nav a:focus-visible,
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #f6c85f;
-    outline-offset: 3px;
-}
-
-.hero,
-.page-intro {
-    width: min(100% - 40px, 1120px);
-    margin: 0 auto;
-}
-
-.hero {
-    min-height: 560px;
-    padding: 90px 0 110px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.hero h1,
-.page-intro h1 {
-    max-width: 780px;
-    margin: 12px 0 18px;
-    font-size: clamp(2.8rem, 7vw, 5.6rem);
-    line-height: 1.02;
-    letter-spacing: -0.045em;
-}
-
-.hero-text,
-.page-intro p:last-child {
-    max-width: 690px;
-    margin: 0 0 30px;
-    color: rgba(255, 255, 255, 0.84);
-    font-size: 1.12rem;
-}
-
-.eyebrow,
-.section-label {
-    margin: 0;
-    color: var(--teal);
-    font-size: 0.79rem;
-    font-weight: 800;
-    letter-spacing: 0.17em;
-    text-transform: uppercase;
-}
-
-.eyebrow {
-    color: #b9ece8;
-}
-
-.primary-button,
-.light-button,
-.button-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 12px 20px;
-    border-radius: 999px;
-    font-weight: 800;
-    text-decoration: none;
-    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
-}
-
-.primary-button {
-    background: var(--paper);
-    color: var(--navy);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
-}
-
-.primary-button:hover,
-.light-button:hover,
-.button-link:hover {
-    transform: translateY(-2px);
-}
-
-.interior-header {
-    background:
-        linear-gradient(120deg, rgba(16, 42, 67, 0.98), rgba(20, 125, 126, 0.94)),
-        url("mountain-hiker.jpg") center 58% / cover;
-}
-
-.ai-header {
-    background:
-        linear-gradient(120deg, rgba(22, 32, 62, 0.97), rgba(73, 83, 153, 0.9)),
-        url("trail-hiker.jpg") center 55% / cover;
-}
-
-.page-intro {
-    padding: 70px 0 80px;
-}
-
-.page-intro h1 {
-    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    text-decoration: underline;
 }
 
 main {
-    width: min(100% - 40px, 1120px);
-    margin: 70px auto;
+    width: 85%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: white;
 }
 
 h2 {
-    margin: 7px 0 18px;
-    color: var(--navy);
-    font-size: clamp(1.8rem, 4vw, 2.7rem);
-    line-height: 1.15;
-    letter-spacing: -0.025em;
+    color: #234e52;
 }
 
-.content-card,
-.form-introduction,
-form {
-    border: 1px solid rgba(217, 226, 236, 0.82);
-    border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: var(--small-shadow);
-}
-
-.content-card {
-    padding: clamp(28px, 5vw, 52px);
-}
-
-.about-grid,
-.resources-grid {
-    display: grid;
-    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.45fr);
-    gap: clamp(32px, 7vw, 90px);
-    align-items: start;
-}
-
-.about-copy p:first-child {
-    margin-top: 0;
-}
-
-.about-copy p:last-child {
-    margin-bottom: 0;
-}
-
-.gallery-section {
-    margin: 72px 0;
-}
-
-.section-heading {
-    margin-bottom: 26px;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: 0.78fr 1.22fr;
-    gap: 24px;
-}
-
-.photo-card {
-    position: relative;
-    min-height: 480px;
-    margin: 0;
-    overflow: hidden;
-    border-radius: var(--radius);
-    background: var(--navy);
-    box-shadow: var(--shadow);
-}
-
-.photo-card img {
+.portfolio-image {
     width: 100%;
-    height: 100%;
-    min-height: 480px;
+    max-width: 700px;
+    height: auto;
+    margin: 15px auto;
     display: block;
-    object-fit: cover;
-    transition: transform 500ms ease;
+    border-radius: 6px;
 }
 
-.photo-card:hover img {
-    transform: scale(1.025);
+ul {
+    padding-left: 25px;
 }
 
-.photo-card figcaption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 70px 24px 24px;
-    display: grid;
-    gap: 4px;
-    background: linear-gradient(transparent, rgba(8, 25, 42, 0.9));
-    color: var(--paper);
+li {
+    margin-bottom: 10px;
 }
 
-.photo-card figcaption strong {
-    font-size: 1.25rem;
-}
-
-.photo-card figcaption span {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.resource-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.resource-list li + li {
-    border-top: 1px solid var(--line);
-}
-
-.resource-list a {
-    padding: 18px 4px;
-    display: grid;
-    gap: 3px;
-    color: var(--navy);
-    text-decoration: none;
-}
-
-.resource-list a:hover span {
-    color: var(--teal);
-}
-
-.resource-list span {
-    font-weight: 800;
-    transition: color 160ms ease;
-}
-
-.resource-list small {
-    color: var(--muted);
-    font-size: 0.95rem;
-}
-
-.contact-callout {
-    margin-top: 72px;
-    padding: clamp(30px, 6vw, 58px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
-    border-radius: var(--radius);
-    background: linear-gradient(120deg, var(--navy), var(--teal-dark));
-    color: var(--paper);
-    box-shadow: var(--shadow);
-}
-
-.contact-callout h2 {
-    max-width: 760px;
-    margin-bottom: 0;
-    color: var(--paper);
-}
-
-.light-label {
-    color: #a9e3df;
-}
-
-.light-button {
-    flex: 0 0 auto;
-    background: var(--paper);
-    color: var(--navy);
-}
-
-.form-introduction {
-    max-width: 860px;
-    margin: 0 auto 24px;
-    padding: 24px 28px;
-}
-
-.form-introduction h2 {
-    margin-bottom: 8px;
-    font-size: 1.55rem;
-}
-
-.form-introduction p {
-    margin: 0;
-    color: var(--muted);
+li a {
+    color: #1f6f78;
 }
 
 form {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: clamp(24px, 5vw, 44px);
+    margin-top: 20px;
 }
 
 fieldset {
-    margin: 0 0 30px;
-    padding: 0;
-    border: 0;
-}
-
-fieldset + fieldset {
-    padding-top: 28px;
-    border-top: 1px solid var(--line);
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #999999;
+    border-radius: 6px;
 }
 
 legend {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 0;
-    color: var(--navy);
-    font-size: 1.25rem;
-    font-weight: 800;
+    padding: 0 8px;
+    color: #234e52;
+    font-weight: bold;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.field-group {
-    min-width: 0;
-}
-
-.full-width {
-    grid-column: 1 / -1;
-}
-
-label:not(.choice-option) {
+label {
+    margin-top: 12px;
     display: block;
-    margin-bottom: 7px;
-    color: var(--navy-soft);
-    font-weight: 750;
+    font-weight: bold;
 }
 
 input[type="text"],
@@ -429,224 +101,79 @@ input[type="file"],
 select,
 textarea {
     width: 100%;
-    min-height: 48px;
-    padding: 11px 13px;
-    border: 1px solid #bcccdc;
-    border-radius: 11px;
-    background: #fbfdff;
-    color: var(--ink);
-    font: inherit;
-    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-textarea {
-    min-height: 150px;
-    resize: vertical;
+.choice-label {
+    margin: 8px 0;
+    font-weight: normal;
 }
 
-input:hover,
-select:hover,
-textarea:hover {
-    border-color: #829ab1;
+.button-group {
+    margin-top: 20px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--teal);
-    background: var(--paper);
-    box-shadow: 0 0 0 4px rgba(20, 125, 126, 0.12);
-}
-
-.field-note,
-.group-prompt {
-    color: var(--muted);
-    font-size: 0.92rem;
-}
-
-.field-note {
-    margin: 6px 0 0;
-}
-
-.group-prompt {
-    margin: -8px 0 14px;
-}
-
-.choice-option {
-    margin: 9px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+input[type="submit"],
+input[type="reset"] {
+    margin-right: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.choice-option input {
-    width: 18px;
-    height: 18px;
-    margin-top: 4px;
-    accent-color: var(--teal);
+input[type="submit"] {
+    background-color: #1f6f78;
+    color: white;
 }
 
-.checkbox-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 26px;
+input[type="reset"] {
+    background-color: #dddddd;
+    color: #222222;
 }
 
-.consent-option {
-    margin-top: 18px;
-    padding: 14px 16px;
-    border-radius: 12px;
-    background: var(--aqua);
+input[type="submit"]:hover {
+    background-color: #15555c;
 }
 
-.nested-fieldset {
-    margin-top: 24px;
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-}
-
-.nested-fieldset legend {
-    width: auto;
-    margin: 0;
-    padding: 0 8px;
-    font-size: 1rem;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-button {
-    min-height: 48px;
-    padding: 12px 20px;
-    border: 0;
-    border-radius: 999px;
-    background: var(--teal);
-    color: var(--paper);
-    cursor: pointer;
-    font: inherit;
-    font-weight: 800;
-    transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-}
-
-button:hover {
-    background: var(--teal-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 18px rgba(20, 125, 126, 0.22);
-}
-
-.secondary-button {
-    background: #e9eff5;
-    color: var(--navy);
-}
-
-.secondary-button:hover {
-    background: #d9e2ec;
-    box-shadow: none;
+input[type="reset"]:hover {
+    background-color: #cccccc;
 }
 
 footer {
-    width: min(100% - 40px, 1120px);
-    margin: 0 auto;
-    padding: 28px 0 40px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 0.92rem;
+    background-color: #234e52;
+    color: white;
+    padding: 15px;
+    text-align: center;
 }
 
-footer p {
-    margin: 0;
-}
-
-@media (max-width: 780px) {
-    .header-inner,
-    .contact-callout,
-    footer {
-        align-items: flex-start;
-        flex-direction: column;
+/* This media query improves the layout on smaller screens. */
+@media (max-width: 600px) {
+    main {
+        width: 92%;
     }
 
-    .hero {
-        min-height: 500px;
-        padding: 70px 0 80px;
-    }
-
-    .about-grid,
-    .resources-grid,
-    .image-grid,
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .photo-card,
-    .photo-card img {
-        min-height: 430px;
-    }
-
-    .landscape-photo,
-    .landscape-photo img {
-        min-height: 330px;
-    }
-
-    .contact-callout {
-        align-items: stretch;
-    }
-
-    .light-button {
-        align-self: flex-start;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-inner,
-    .hero,
-    .page-intro,
-    main,
-    footer {
-        width: min(100% - 26px, 1120px);
-    }
-
-    .header-inner {
-        padding: 18px 0;
-    }
-
-    .hero h1,
-    .page-intro h1 {
-        letter-spacing: -0.035em;
+    header {
+        padding: 20px 10px;
     }
 
     nav a {
-        padding: 8px 10px;
+        margin: 0 5px;
     }
 
-    main {
-        margin-top: 42px;
+    section {
+        padding: 18px;
     }
 
-    .content-card,
-    form {
-        padding: 22px;
-    }
-
-    .photo-card,
-    .photo-card img {
-        min-height: 380px;
-    }
-
-    .form-buttons {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    button {
+    input[type="submit"],
+    input[type="reset"] {
         width: 100%;
+        margin: 5px 0;
     }
 }
