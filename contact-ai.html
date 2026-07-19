@@ -1,98 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This page contains the AI-generated version of the contact form. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Contact Form</title>
+    <title>AI-Improved Contact | Lacy Howell</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
+    <h1>Contact & Trail Recommendation</h1>
+    <p>Send a message and receive a basic hiking suggestion.</p>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html" aria-current="page">Contact & Recommendation</a>
+        <a href="multimedia.html">Multimedia</a>
+    </nav>
+</header>
+<main>
+    <section class="card">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
 
-    <header>
-        <h1>AI-Generated Contact Form</h1>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Manual Form</a>
-            <a href="contact-ai.html">AI Form</a>
-        </nav>
-    </header>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-    <main>
-        <section>
-            <h2>Contact Form</h2>
+            <button type="submit">Submit Message</button>
+        </form>
+    </section>
 
-            <p>
-                This is the AI-generated version of the contact form used for comparison.
-            </p>
+    <section class="card">
+        <p class="compare-note"><strong>AI-improved comparison:</strong> This version adds a distance preference, safer input checking, focus management, and more descriptive output.</p>
+        <h2>Find a Hiking Recommendation</h2>
+        <label for="experience">Select your hiking experience:</label>
+        <select id="experience">
+            <option value="">Choose one</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select>
+        <label for="distance">Preferred distance:</label>
+        <select id="distance">
+            <option value="short">Under 3 miles</option>
+            <option value="medium">3 to 7 miles</option>
+            <option value="long">More than 7 miles</option>
+        </select>
+        <button type="button" id="recommendButton">Show Recommendation</button>
+        <div id="recommendation" class="result" aria-live="polite">Your recommendation will appear here.</div>
+    </section>
+</main>
+<footer><p>&copy; 2026 Lacy Howell</p></footer>
 
-            <!-- The AI version also includes labels, fieldsets, and different input types. -->
-            <form action="#" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>Personal Information</legend>
+<script>
+/*
+    Manual JavaScript for Unit 3.
+    The selected value is checked with if / else if / else statements.
+    A different message is displayed for each experience level.
+*/
+document.getElementById("recommendButton").addEventListener("click", function () {
+    const experience = document.getElementById("experience").value;
+    const output = document.getElementById("recommendation");
+    const distance = document.getElementById("distance").value;
 
-                    <label for="ai-name">Name *</label>
-                    <input type="text" id="ai-name" name="name" required>
+    if (experience === "beginner") {
+        output.textContent = "A " + distance + " beginner route on a well-marked trail is a good starting point. Bring water, check the weather, and tell someone your plan.";
+    } else if (experience === "intermediate") {
+        output.textContent = "Choose a " + distance + " moderate hike with manageable elevation gain. Carry navigation, extra water, and a first-aid kit.";
+    } else if (experience === "advanced") {
+        output.textContent = "A " + distance + " advanced route may fit your choice. Review permits, navigation, weather, and emergency plans before leaving.";
+    } else {
+        output.textContent = "Please select an experience level before requesting a recommendation.";
+        document.getElementById("experience").focus();
+    }
+});
 
-                    <label for="ai-email">Email *</label>
-                    <input type="email" id="ai-email" name="email" required>
-
-                    <label for="ai-subject">Subject *</label>
-                    <input type="text" id="ai-subject" name="subject" required>
-
-                    <label for="ai-message">Message *</label>
-                    <textarea id="ai-message" name="message" rows="6" required></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Additional Details</legend>
-
-                    <label for="ai-topic">Topic</label>
-                    <select id="ai-topic" name="topic">
-                        <option value="general">General Question</option>
-                        <option value="feedback">Website Feedback</option>
-                        <option value="outdoors">Outdoor Activities</option>
-                    </select>
-
-                    <label for="ai-date">Preferred Date</label>
-                    <input type="date" id="ai-date" name="date">
-
-                    <label for="ai-number">Number of Participants</label>
-                    <input type="number" id="ai-number" name="participants" min="1" max="20">
-
-                    <label for="ai-file">Upload a File</label>
-                    <input type="file" id="ai-file" name="file">
-
-                    <p>Preferred Contact Method:</p>
-
-                    <label class="choice-label">
-                        <input type="radio" name="ai-method" value="email" checked>
-                        Email
-                    </label>
-
-                    <label class="choice-label">
-                        <input type="radio" name="ai-method" value="phone">
-                        Phone
-                    </label>
-
-                    <label class="choice-label">
-                        <input type="checkbox" name="updates">
-                        Send Me Updates
-                    </label>
-                </fieldset>
-
-                <div class="button-group">
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Reset">
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Lacy Howell</p>
-    </footer>
-
+/* Prevents the practice form from trying to send data to a server. */
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Thank you! This demonstration form is not connected to a server.");
+});
+</script>
 </body>
 </html>

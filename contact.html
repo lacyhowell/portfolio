@@ -1,120 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This information helps the form page display correctly in browsers and on mobile devices. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Lacy Howell</title>
+    <title>Contact & Recommendation | Lacy Howell</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
+    <h1>Contact & Trail Recommendation</h1>
+    <p>Send a message and receive a basic hiking suggestion.</p>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html" aria-current="page">Contact & Recommendation</a>
+        <a href="multimedia.html">Multimedia</a>
+    </nav>
+</header>
+<main>
+    <section class="card">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
 
-    <!-- The header keeps the same title and navigation on each page. -->
-    <header>
-        <h1>Contact Me</h1>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact Me</a>
-        </nav>
-    </header>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-    <main>
-        <section>
-            <h2>Send Me a Message</h2>
+            <button type="submit">Submit Message</button>
+        </form>
+    </section>
 
-            <p>
-                Please complete the form below. Fields marked with an asterisk are required.
-                This form is for a class project and does not send information to a real email address.
-            </p>
+    <section class="card">
+        <h2>Find a Hiking Recommendation</h2>
+        <label for="experience">Select your hiking experience:</label>
+        <select id="experience">
+            <option value="">Choose one</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select>
+        <button type="button" id="recommendButton">Show Recommendation</button>
+        <div id="recommendation" class="result" aria-live="polite">Your recommendation will appear here.</div>
+    </section>
+</main>
+<footer><p>&copy; 2026 Lacy Howell</p></footer>
 
-            <!-- This form includes more than ten different fields and form elements. -->
-            <form action="#" method="post" enctype="multipart/form-data">
+<script>
+/*
+    Manual JavaScript for Unit 3.
+    The selected value is checked with if / else if / else statements.
+    A different message is displayed for each experience level.
+*/
+document.getElementById("recommendButton").addEventListener("click", function () {
+    const experience = document.getElementById("experience").value;
+    const output = document.getElementById("recommendation");
 
-                <!-- This fieldset groups the visitor's basic contact information. -->
-                <fieldset>
-                    <legend>Contact Information</legend>
+    if (experience === "beginner") {
+        output.textContent = "Start with a short, well-marked trail. Bring water, check the weather, and tell someone where you are going.";
+    } else if (experience === "intermediate") {
+        output.textContent = "Try a moderate day hike with some elevation gain. Carry a map, extra water, and a basic first-aid kit.";
+    } else if (experience === "advanced") {
+        output.textContent = "Consider a longer backcountry route, but review permits, navigation needs, weather, and emergency plans first.";
+    } else {
+        output.textContent = "Please select an experience level before requesting a recommendation.";
+    }
+});
 
-                    <label for="full-name">Full Name *</label>
-                    <input type="text" id="full-name" name="full-name" required>
-
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </fieldset>
-
-                <!-- This fieldset groups additional contact choices. -->
-                <fieldset>
-                    <legend>Additional Information</legend>
-
-                    <label for="topic">Reason for Contacting Me</label>
-                    <select id="topic" name="topic">
-                        <option value="">Select a topic</option>
-                        <option value="website">Website Feedback</option>
-                        <option value="outdoors">Outdoor Recommendation</option>
-                        <option value="school">School Project Question</option>
-                        <option value="other">Other</option>
-                    </select>
-
-                    <label for="contact-date">Preferred Contact Date</label>
-                    <input type="date" id="contact-date" name="contact-date">
-
-                    <label for="group-size">Number of People</label>
-                    <input type="number" id="group-size" name="group-size" min="1" max="20">
-
-                    <label for="attachment">Upload a File</label>
-                    <input type="file" id="attachment" name="attachment">
-
-                    <p>Preferred Contact Method:</p>
-
-                    <label class="choice-label">
-                        <input type="radio" name="contact-method" value="email" checked>
-                        Email
-                    </label>
-
-                    <label class="choice-label">
-                        <input type="radio" name="contact-method" value="phone">
-                        Phone
-                    </label>
-
-                    <p>Topics You Enjoy:</p>
-
-                    <label class="choice-label">
-                        <input type="checkbox" name="interests" value="hiking">
-                        Hiking
-                    </label>
-
-                    <label class="choice-label">
-                        <input type="checkbox" name="interests" value="camping">
-                        Camping
-                    </label>
-
-                    <label class="choice-label">
-                        <input type="checkbox" name="interests" value="web-design">
-                        Web Design
-                    </label>
-                </fieldset>
-
-                <!-- These buttons submit or clear the form. -->
-                <div class="button-group">
-                    <input type="submit" value="Submit Form">
-                    <input type="reset" value="Reset Form">
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Lacy Howell</p>
-    </footer>
-
+/* Prevents the practice form from trying to send data to a server. */
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Thank you! This demonstration form is not connected to a server.");
+});
+</script>
 </body>
 </html>
