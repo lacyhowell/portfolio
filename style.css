@@ -1,5 +1,5 @@
 
-/* Unit 3 shared stylesheet: simple, responsive, and beginner-friendly. */
+/* Unit 4 shared stylesheet: cohesive, responsive, accessible, and beginner-friendly. */
 :root {
     --teal: #176B72;
     --teal-dark: #0E4D52;
@@ -173,4 +173,164 @@ footer {
 @media (max-width: 720px) {
     .gallery { grid-template-columns: 1fr; }
     nav a { display: block; max-width: 240px; margin: 7px auto; }
+}
+
+
+/* Unit 4 additions: layout, advanced selectors, cards, chatbot, and responsive behavior. */
+nav a[aria-current="page"] {
+    background: var(--orange);
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--teal-dark);
+    margin-top: 0;
+}
+
+.card > h2 + p {
+    max-width: 75ch;
+}
+
+.howto-intro,
+.tip-section {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 22px;
+    align-items: center;
+}
+
+.howto-intro img,
+.tip-section img {
+    width: 100%;
+    border: 3px solid var(--teal-light);
+    border-radius: 10px;
+    display: block;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.step-card {
+    position: relative;
+    background: #F9FCFC;
+    border: 1px solid #C7DDDF;
+    border-left: 6px solid var(--teal);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.step-card:last-child {
+    grid-column: 1 / -1;
+}
+
+.step-card h3 {
+    margin: 4px 0 8px;
+    color: var(--teal-dark);
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: #1D2B2D;
+    font-weight: bold;
+}
+
+.checklist {
+    padding-left: 22px;
+}
+
+.checklist li {
+    margin: 8px 0;
+}
+
+.chatbot-card {
+    border-top: 5px solid var(--orange);
+}
+
+.chat-window {
+    min-height: 230px;
+    max-height: 360px;
+    overflow-y: auto;
+    background: #F8FAFA;
+    border: 1px solid #C9D3D6;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 16px 0;
+}
+
+.chat-message {
+    max-width: 82%;
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.bot-message {
+    background: var(--teal-light);
+    border-left: 4px solid var(--teal);
+}
+
+.user-message {
+    background: #FFF0E3;
+    border-right: 4px solid var(--orange);
+    margin-left: auto;
+}
+
+.pending-message {
+    font-style: italic;
+}
+
+.chat-form label {
+    display: block;
+}
+
+.chat-input-row {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.chat-input-row input {
+    flex: 1;
+    margin: 0;
+}
+
+.chat-input-row button {
+    flex: 0 0 auto;
+}
+
+.small-note {
+    font-size: .9rem;
+    color: #536164;
+    margin-bottom: 0;
+}
+
+code {
+    background: #EEF2F3;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+    .howto-intro,
+    .tip-section,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card:last-child {
+        grid-column: auto;
+    }
+
+    .chat-input-row {
+        flex-direction: column;
+    }
 }
