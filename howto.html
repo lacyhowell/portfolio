@@ -112,7 +112,7 @@
                 <button type="submit">Send</button>
             </div>
         </form>
-        <p class="small-note">Setup note: replace <code>YOUR_GEMINI_API_KEY</code> in this page with your own Gemini API key before publishing the chatbot.</p>
+    
     </section>
 </main>
 
@@ -124,7 +124,7 @@
     This uses fetch() to send the visitor's question to Google's Gemini generateContent endpoint.
     Replace the placeholder API key below with a key created for your class project.
 */
-const GEMINI_API_KEY = "AQ.Ab8RN6IBmJ0PX4XLcUrgh1mlHsX7k-zM9829GMyN-e9NsXqAhw";
+const GEMINI_API_KEY = "AQ.Ab8RN6L66bjdEiJmHGFZITleo7U9FCAt7cX9L6bi2uaYzV4HyQ";
 const GEMINI_MODEL = "gemini-2.5-flash";
 
 const chatForm = document.getElementById("chatForm");
@@ -154,7 +154,7 @@ chatForm.addEventListener("submit", async function (event) {
     userMessage.value = "";
     userMessage.focus();
 
-    if (GEMINI_API_KEY === "AQ.Ab8RN6IBmJ0PX4XLcUrgh1mlHsX7k-zM9829GMyN-e9NsXqAhw") {
+    if (GEMINI_API_KEY === "YOUR_GEMINI_API_KEY") {
         addMessage("Hiking Helper", "The chatbot interface is ready, but the Gemini API key still needs to be added before live AI responses will work.", "bot-message");
         return;
     }
