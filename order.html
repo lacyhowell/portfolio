@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outdoor Order Form | Lacy Howell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Outdoor Adventure Order Form</h1>
+    <p>Select outdoor planning products and services, then review your order instantly.</p>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact & Recommendation</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="howto.html">How-To Guide & AI Chat</a>
+        <a href="order.html" aria-current="page">Order Form</a>
+    </nav>
+</header>
+
+<main>
+    <section class="card order-intro">
+        <div>
+            <h2>Build Your Outdoor Package</h2>
+            <p>
+                Choose any combination of the items below. The order summary updates when you select
+                <strong>Calculate Order</strong>. Orders with a subtotal over $75 receive a 10% discount.
+            </p>
+        </div>
+        <img src="camp.jpg" alt="Outdoor camping equipment arranged near a mountain campsite">
+    </section>
+
+    <form id="orderForm" class="order-layout">
+        <section class="card" aria-labelledby="items-heading">
+            <h2 id="items-heading">Available Items</h2>
+            <p>Enter a quantity from 0 to 10 for each item.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <h3>Beginner Trail Plan</h3>
+                    <p>A customized day-hike plan with distance, preparation tips, and a packing reminder.</p>
+                    <p class="price">$25.00 each</p>
+                    <label for="trailPlan">Quantity</label>
+                    <input class="item-quantity" id="trailPlan" name="trailPlan" type="number" min="0" max="10" value="0" data-name="Beginner Trail Plan" data-price="25">
+                </article>
+
+                <article class="product-card">
+                    <h3>Family Adventure Checklist</h3>
+                    <p>A printable checklist for organizing food, clothing, safety items, and family gear.</p>
+                    <p class="price">$12.00 each</p>
+                    <label for="familyChecklist">Quantity</label>
+                    <input class="item-quantity" id="familyChecklist" name="familyChecklist" type="number" min="0" max="10" value="0" data-name="Family Adventure Checklist" data-price="12">
+                </article>
+
+                <article class="product-card">
+                    <h3>Camp Meal Planner</h3>
+                    <p>A simple three-day meal-planning template designed for a weekend camping trip.</p>
+                    <p class="price">$8.00 each</p>
+                    <label for="mealPlanner">Quantity</label>
+                    <input class="item-quantity" id="mealPlanner" name="mealPlanner" type="number" min="0" max="10" value="0" data-name="Camp Meal Planner" data-price="8">
+                </article>
+
+                <article class="product-card">
+                    <h3>Outdoor Sticker Pack</h3>
+                    <p>A set of five outdoor-themed stickers featuring trails, mountains, and camping.</p>
+                    <p class="price">$6.00 each</p>
+                    <label for="stickerPack">Quantity</label>
+                    <input class="item-quantity" id="stickerPack" name="stickerPack" type="number" min="0" max="10" value="0" data-name="Outdoor Sticker Pack" data-price="6">
+                </article>
+            </div>
+
+            <div class="order-actions">
+                <button type="submit">Calculate Order</button>
+                <button type="reset" class="secondary-button">Clear Form</button>
+            </div>
+        </section>
+
+        <aside class="card summary-panel" aria-labelledby="summary-heading">
+            <h2 id="summary-heading">Order Summary</h2>
+            <div id="orderSummary" class="order-summary" aria-live="polite">
+                <p>Select quantities and calculate your order.</p>
+            </div>
+        </aside>
+    </form>
+</main>
+
+<footer><p>&copy; 2026 Lacy Howell</p></footer>
+
+<script>
+/*
+    Unit 5 order form calculations.
+    The forEach loop reviews every quantity input, totals selected items,
+    calculates the subtotal, applies a discount when appropriate, and
+    creates an accessible order summary without reloading the page.
+*/
+const orderForm = document.getElementById("orderForm");
+const quantityInputs = document.querySelectorAll(".item-quantity");
+const orderSummary = document.getElementById("orderSummary");
+
+function formatMoney(amount) {
+    return amount.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    });
+}
+
+orderForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let totalQuantity = 0;
+    let subtotal = 0;
+    const selectedItems = [];
+
+    quantityInputs.forEach(function (input) {
+        const quantity = Number(input.value);
+        const price = Number(input.dataset.price);
+        const itemName = input.dataset.name;
+
+        if (quantity > 0) {
+            const itemTotal = quantity * price;
+            totalQuantity += quantity;
+            subtotal += itemTotal;
+            selectedItems.push(`${itemName}: ${quantity} × ${formatMoney(price)} = ${formatMoney(itemTotal)}`);
+        }
+    });
+
+    if (totalQuantity === 0) {
+        orderSummary.innerHTML = "<p><strong>Please select at least one item.</strong></p>";
+        orderSummary.classList.remove("summary-updated");
+        void orderSummary.offsetWidth;
+        orderSummary.classList.add("summary-updated");
+        quantityInputs[0].focus();
+        return;
+    }
+
+    const discountRate = subtotal > 75 ? 0.10 : 0;
+    const discountAmount = subtotal * discountRate;
+    const finalTotal = subtotal - discountAmount;
+
+    const itemList = selectedItems.map(function (item) {
+        return `<li>${item}</li>`;
+    }).join("");
+
+    orderSummary.innerHTML = `
+        <ul>${itemList}</ul>
+        <p><strong>Total quantity:</strong> ${totalQuantity}</p>
+        <p><strong>Subtotal:</strong> ${formatMoney(subtotal)}</p>
+        <p><strong>Discount:</strong> ${discountRate > 0 ? "10% (-" + formatMoney(discountAmount) + ")" : "No discount"}</p>
+        <p class="grand-total"><strong>Final total:</strong> ${formatMoney(finalTotal)}</p>
+    `;
+
+    orderSummary.classList.remove("summary-updated");
+    void orderSummary.offsetWidth;
+    orderSummary.classList.add("summary-updated");
+});
+
+orderForm.addEventListener("reset", function () {
+    window.setTimeout(function () {
+        orderSummary.innerHTML = "<p>Select quantities and calculate your order.</p>";
+        orderSummary.classList.remove("summary-updated");
+    }, 0);
+});
+</script>
+</body>
+</html>
